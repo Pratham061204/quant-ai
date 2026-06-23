@@ -5,7 +5,7 @@ const PHASES = [
   { label: "Fetching live quote data", ms: 600 },
   { label: "Computing technical indicators", ms: 700 },
   { label: "Detecting chart patterns", ms: 900 },
-  { label: "Running Claude Sonnet 4.5 reasoning", ms: 1500 },
+  { label: "AI model reasoning", ms: 1500 },
   { label: "Calibrating entry, stop & R/R", ms: 800 },
 ];
 
