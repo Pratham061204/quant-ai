@@ -1,0 +1,105 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Chivo:wght@400;700;900&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap');
+
+:root {
+    --bg: #0a0b0d;
+    --surface: #121418;
+    --surface-hover: #1a1d24;
+    --border: #20242a;
+    --border-bright: #2c3138;
+    --text: #ffffff;
+    --text-muted: #8b949e;
+    --accent: #2E90FA;
+    --bull: #17B26A;
+    --bear: #F04438;
+    --warn: #F79009;
+}
+
+html, body, #root {
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    font-family: 'IBM Plex Sans', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    margin: 0;
+    background:
+        radial-gradient(ellipse at top, rgba(46, 144, 250, 0.06), transparent 50%),
+        var(--bg);
+}
+
+.font-display { font-family: 'Chivo', sans-serif; letter-spacing: -0.02em; }
+.font-mono { font-family: 'IBM Plex Mono', monospace; }
+
+.surface {
+    background: var(--surface);
+    border: 1px solid var(--border);
+}
+.surface-hover:hover {
+    background: var(--surface-hover);
+    border-color: var(--border-bright);
+}
+
+.grid-bg {
+    background-image:
+        linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+    background-size: 48px 48px;
+}
+
+.ticker-tape {
+    animation: scroll 60s linear infinite;
+}
+@keyframes scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+@keyframes pulse-dot {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.4; }
+}
+.pulse-dot { animation: pulse-dot 1.6s ease-in-out infinite; }
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: var(--border-bright); }
+
+/* shadcn-required base */
+@layer base {
+    :root {
+        --background: 220 13% 5%;
+        --foreground: 0 0% 100%;
+        --card: 222 13% 8%;
+        --card-foreground: 0 0% 100%;
+        --popover: 222 13% 8%;
+        --popover-foreground: 0 0% 100%;
+        --primary: 211 96% 58%;
+        --primary-foreground: 0 0% 100%;
+        --secondary: 222 13% 12%;
+        --secondary-foreground: 0 0% 100%;
+        --muted: 222 13% 12%;
+        --muted-foreground: 215 10% 60%;
+        --accent: 222 13% 14%;
+        --accent-foreground: 0 0% 100%;
+        --destructive: 0 86% 60%;
+        --destructive-foreground: 0 0% 100%;
+        --border: 220 10% 16%;
+        --input: 220 10% 16%;
+        --ring: 211 96% 58%;
+        --radius: 0.25rem;
+    }
+}
+
+@layer base {
+    * { @apply border-border; }
+    body { @apply bg-background text-foreground; }
+}
